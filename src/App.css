@@ -1,0 +1,222 @@
+:root {
+  --secton-overlay: rgba(0, 0, 0, 0.7);
+  --background-overlay: rgba(0, 0, 0, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--background-overlay);
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.section {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  color: white;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: black;
+}
+
+.section-input,
+.secton-temperature {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--secton-overlay);
+}
+
+.section-input input {
+  border: 0.8px solid white;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  font-size: 20px;
+  color: white;
+  padding: 0.5rem;
+  font-weight: 200;
+}
+
+.section-input input:focus {
+  outline: none;
+}
+
+.section-input button {
+  padding: 10px 50px;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  font-weight: 500;
+  background-color: white;
+}
+
+.section-input button:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.description h3 {
+  font-size: 15px;
+  font-family: 200;
+  text-transform: capitalize;
+}
+
+.temperature h1 {
+  font-size: 60px;
+}
+
+.btn-box {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.fav {
+  transition: 0.2s;
+}
+
+.fav:active {
+  scale: 0.9;
+}
+
+.section-fav {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--secton-overlay);
+}
+
+.favbox,
+.forecast {
+  display: flex;
+  justify-content: space-around;
+  height: 100px;
+  margin: 10px;
+  border: 1px solid rgb(255, 241, 241);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.favbox:hover,
+.forecast:hover {
+  scale: 1.1;
+}
+
+.favbox h3,
+.forecast h3 {
+  font-size: 10px;
+  text-align: center;
+  width: 100px;
+}
+
+.favbox img {
+  width: 50px;
+  height: 50px;
+}
+
+.cross {
+  font-size: 15px;
+}
+
+.forecast img {
+  width: 40px;
+  height: 40px;
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0.5rem;
+    height: auto;
+  }
+
+  .section {
+    padding: 0.5rem;
+  }
+
+  .section-input,
+  .secton-temperature {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-input input {
+    font-size: 16px;
+    padding: 0.4rem;
+    width: 100%;
+  }
+
+  .section-input button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+
+  .description h3 {
+    font-size: 14px;
+  }
+
+  .temperature h1 {
+    font-size: 50px;
+  }
+
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .favbox,
+  .forecast {
+    height: 80px;
+    margin: 5px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .favbox h3,
+  .forecast h3 {
+    font-size: 8px;
+  }
+
+  .favbox img,
+  .forecast img {
+    width: 40px;
+    height: 40px;
+  }
+}
